@@ -14,8 +14,6 @@ public class Main{
         if (command == 1) {
             user.moneyRUB = 0.0;
         }
-        else
-            user.moneyRUB = -1.0;
 
         System.out.println("Хотите открыть счёт в USD?");
         System.out.println("1 - Да");
@@ -24,8 +22,6 @@ public class Main{
         if (command == 1) {
             user.moneyUSD = 0.0;
         }
-        else
-            user.moneyUSD = -1.0;
 
         System.out.println("Хотите открыть счёт в EUR?");
         System.out.println("1 - Да");
@@ -34,18 +30,16 @@ public class Main{
         if (command == 1) {
             user.moneyEUR = 0.0;
         }
-        else
-            user.moneyEUR = -1.0;
 
         System.out.println("Поздравляем, аккаунт для пользователя " + user.name + " создан.");
         System.out.println("Открытые счета:");
-        if (user.moneyRUB == 0.0) {
+        if (user.moneyRUB != null) {
             System.out.println("- RUB");
         }
-        if (user.moneyUSD == 0.0) {
+        if (user.moneyUSD != null) {
             System.out.println("- USD");
         }
-        if (user.moneyEUR == 0.0) {
+        if (user.moneyEUR != null) {
             System.out.println("- EUR");
         }
 
@@ -54,9 +48,9 @@ public class Main{
 
 class PersonAccount {
     String name;      // имя и фамилия
-    double moneyRUB;  // счёт в рублях
-    double moneyUSD;  // счёт в долларах
-    double moneyEUR;  // счёт в евро
+    Double moneyRUB;  // счёт в рублях
+    Double moneyUSD;  // счёт в долларах
+    Double moneyEUR;  // счёт в евро
 
 
     PersonAccount(String userName) {
